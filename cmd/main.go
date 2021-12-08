@@ -20,12 +20,25 @@ func NewCmds() *cobra.Command {
 		RunE:  hellowWorldHandler,
 	}
 
+	cosmosCmd := &cobra.Command{
+		Use:   "cosmos",
+		Short: "Hello Cosmos",
+		RunE:  hellowCosmosHandler,
+	}
+
 	c.AddCommand(worldCmd)
+	c.AddCommand(cosmosCmd)
 	return c
 }
 
 func hellowWorldHandler(cmd *cobra.Command, args []string) error {
 	cmd.Print("Hello world")
+
+	return nil
+}
+
+func hellowCosmosHandler(cmd *cobra.Command, args []string) error {
+	cmd.Print("Hello Cosmos")
 
 	return nil
 }
