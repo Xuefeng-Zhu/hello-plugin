@@ -5,10 +5,10 @@ import (
 )
 
 func main() {
-
+	NewCmds().Execute()
 }
 
-func NewDocs() *cobra.Command {
+func NewCmds() *cobra.Command {
 	c := &cobra.Command{
 		Use:   "hello",
 		Short: "Say hello",
